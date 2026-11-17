@@ -1,0 +1,61 @@
+# Python environments, caches and build outputs
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+
+# Local weights and private inputs
+/models/
+*.safetensors
+*.gguf
+*.ckpt
+*.pt
+*.pth
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+/local-notes/
+/notes/
+**/[Ii][Nn][Tt][Ee][Rr][Vv][Ii][Ee][Ww]*
+/.workflow-backups/
+/.cleanup-backups/
+
+# Publish only explicitly reviewed evidence files
+/results/*
+!/results/cpu-reference/
+!/results/apple-m5-reference/
+/results/cpu-reference/*
+/results/apple-m5-reference/*
+!/results/cpu-reference/REPORT.md
+!/results/cpu-reference/raw.json
+!/results/apple-m5-reference/REPORT.md
+!/results/apple-m5-reference/raw.json
+!/results/apple-m5-reference/PROVENANCE.md
+!/results/apple-m5-reference/model-sha256.json
+!/results/apple-m5-reference/checksums.json
+
+# Machine-local settings
+.DS_Store
+.idea/
+.vscode/
+.aws/
+.codex/
+.agents/
+*.log
+*.swp
+*.swo
+
+# Planning notes are not part of the implemented contribution
+/docs/ROADMAP.md

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "serving-engine-lab"
+version = "0.1.0"
+description = "A measurable decode-first chunked-prefill scheduler with NumPy and MLX backends"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = ["numpy==2.4.6"]
+
+[project.optional-dependencies]
+mlx = ["mlx==0.32.4; sys_platform == 'darwin'", "mlx-lm==0.32.2; sys_platform == 'darwin'"]
+dev = ["ruff==0.14.5", "build>=1.2,<2"]
+
+[project.scripts]
+serving-engine-bench = "serving_engine.benchmark:main"
+serving-engine-serve = "serving_engine.server:main"
+
+[tool.setuptools.packages.find]
+include = ["serving_engine*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
